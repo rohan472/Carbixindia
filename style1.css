@@ -1,0 +1,142 @@
+/* ═══════════════════════════════════════════
+   THEME 1 — DARK NAVY + ORANGE
+   ═══════════════════════════════════════════ */
+:root {
+  --bg:     #080c16;
+  --dark2:  #0d1525;
+  --dark3:  #111d32;
+  --card:   #0e1a2e;
+  --acc:    #e8640a;
+  --acc2:   #ff7a1a;
+  --white:  #ffffff;
+  --text:   #dde4ef;
+  --muted:  #7a90a8;
+  --bdr:    rgba(255,255,255,0.07);
+}
+body { background: var(--bg); color: var(--text); }
+.accent { color: var(--acc); }
+.accent-link { color: var(--acc); }
+.accent-link:hover { text-decoration: underline; }
+
+/* NAV */
+#navbar { background: transparent; }
+#navbar.scrolled { background: rgba(8,12,22,0.97); backdrop-filter: blur(14px); box-shadow: 0 2px 30px rgba(0,0,0,0.7); border-bottom: 1px solid var(--bdr); }
+.logo-carb { color: var(--acc); }
+.logo-india { color: var(--white); }
+.logo-pvt { color: var(--muted); }
+.nav-links li a { color: var(--muted); }
+.nav-links li a::after { background: var(--acc); }
+.nav-links li a:hover { color: var(--white) !important; opacity: 1; }
+.nav-links li:last-child a { background: var(--acc); color: var(--white); }
+.nav-links li:last-child a:hover { background: var(--acc2); }
+.hamburger span { background: var(--white); }
+
+/* HERO */
+.hero-bg { background: radial-gradient(ellipse at 70% 40%, rgba(232,100,10,0.14) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(13,21,37,0.8) 0%, transparent 50%), linear-gradient(160deg, #080c16 0%, #0d1525 60%, #080c16 100%); }
+.hbn-carb { color: var(--acc); }
+.hbn-india { color: var(--white); }
+.hbn-pvt { color: var(--muted); }
+.hero-badge { color: var(--acc); border-color: rgba(232,100,10,0.4); }
+.hero-title { color: var(--white); }
+.hero-title .dot { color: var(--acc); }
+.hero-sub { color: var(--muted); }
+.hero-stats { border-color: var(--bdr); background: rgba(255,255,255,0.04); }
+.stat-num { color: var(--acc); }
+.stat-label { color: var(--muted); }
+.stat-div { background: var(--bdr); }
+
+/* BUTTONS */
+.btn-primary { background: var(--acc); color: var(--white); }
+.btn-primary:hover { background: var(--acc2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,100,10,0.5); }
+.btn-ghost { border-color: rgba(255,255,255,0.3); color: var(--white); }
+.btn-ghost:hover { border-color: var(--acc); color: var(--acc); background: rgba(232,100,10,0.07); }
+
+/* ABOUT */
+.about { background: var(--dark2); }
+.about::before { background: linear-gradient(to right, transparent, var(--acc), transparent); }
+.section-label { color: var(--acc); }
+.section-title { color: var(--white); }
+.section-title em { color: var(--acc); }
+.about-text p { color: var(--muted); }
+.about-highlight { background: rgba(232,100,10,0.07); border-left-color: var(--acc); }
+.ah-lbl { color: var(--muted); }
+.ah-val { color: var(--white); }
+.ah-row .accent-link { color: var(--acc); }
+.about-list li { color: var(--text); }
+.about-list li::before { color: var(--acc); }
+.about-img-wrap { border: 1px solid var(--bdr); }
+.about-badge { background: var(--acc); color: var(--white); }
+.section-sub { color: var(--muted); }
+
+/* INFRASTRUCTURE */
+.infrastructure { background: var(--bg); }
+.infra-card { background: var(--card); border-color: var(--bdr); }
+.infra-card:hover { border-color: rgba(232,100,10,0.4); }
+.infra-body h3 { color: var(--white); }
+.infra-body p { color: var(--muted); }
+
+/* PRODUCTS */
+.products { background: var(--dark2); }
+.product-card { background: var(--card); border-color: var(--bdr); }
+.product-card:hover { box-shadow: 0 20px 60px rgba(0,0,0,0.5); border-color: rgba(232,100,10,0.3); }
+.product-card.featured { border-color: rgba(232,100,10,0.45); box-shadow: 0 0 28px rgba(232,100,10,0.1); }
+.featured-label { background: var(--acc); color: var(--white); }
+.ptag { color: var(--acc); }
+.product-body h3 { color: var(--white); }
+.product-body p { color: var(--muted); }
+.product-body ul li { color: var(--muted); }
+.product-body ul li::before { color: var(--acc); }
+
+/* CBN already inside products section — nothing separate */
+
+/* DIRECTOR */
+.director-section { background: var(--bg); }
+.director-section::before { background: linear-gradient(to right, transparent, var(--acc), transparent); }
+.dco { color: var(--acc); text-shadow: 0 0 40px rgba(232,100,10,0.3); }
+.dci { color: var(--white); }
+.dcp { color: var(--muted); }
+.director-card { background: var(--card); border-color: var(--bdr); }
+.dir-photo-side { background: var(--dark3); }
+.dir-photo-side::after { background: var(--acc); }
+.dpb-role { color: var(--acc) !important; }
+.dir-name-block h3 { color: var(--white); }
+.dir-title { color: var(--acc); }
+.dir-quote { background: rgba(232,100,10,0.07); border-left-color: var(--acc); }
+.qm { color: var(--acc); }
+.dir-quote p { color: var(--text); }
+.dir-highlights .dh { color: var(--text); }
+.dir-cta .btn-primary { background: var(--acc); color: var(--white); }
+.dir-cta .btn-primary:hover { background: var(--acc2); }
+
+/* CLIENTS */
+.clients { background: var(--dark2); }
+.cl { color: var(--muted); }
+.cl:hover { color: var(--acc); background: rgba(232,100,10,0.05); opacity: 1; }
+
+/* DOWNLOAD */
+.download { background: var(--bg); }
+.dl-card { background: linear-gradient(135deg, #142050 0%, var(--dark3) 100%); border-color: rgba(232,100,10,0.2); }
+.dl-text h2 { color: var(--white); }
+.dl-text h2 em { color: var(--acc); }
+.dl-text p { color: var(--muted); }
+
+/* CONTACT */
+.contact { background: var(--dark2); }
+.cp-card { background: rgba(232,100,10,0.07); border-color: rgba(232,100,10,0.3); }
+.cp-photo { border-color: var(--acc); }
+.cp-name { color: var(--white); }
+.cp-role { color: var(--muted); }
+.cp-phone { color: var(--acc); }
+.ci { color: var(--text); }
+.ci strong { color: var(--acc); opacity: 1; }
+.ci div { color: var(--muted); }
+.accent-link { color: var(--acc); }
+.fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--acc); background: rgba(232,100,10,0.04); }
+.fg select option { background: var(--dark2); }
+.form-ok { background: rgba(232,100,10,0.1); border-color: rgba(232,100,10,0.4); color: var(--acc); }
+
+/* FOOTER */
+.footer { background: var(--bg); }
+.fbt-c { color: var(--acc); }
+.fl h4 { color: var(--acc); }
+.fl ul li { color: var(--muted); }

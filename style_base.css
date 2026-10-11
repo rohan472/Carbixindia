@@ -1,0 +1,375 @@
+/* =============================================
+   CARBIX INDIA — BASE CSS (shared all themes)
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Barlow', sans-serif; line-height: 1.65; overflow-x: hidden; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Section Labels ── */
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 800; letter-spacing: 6px;
+  text-transform: uppercase; margin-bottom: 14px; display: block;
+}
+.section-label.light { opacity: 0.85; }
+
+/* ── Section Titles ── */
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 5.5vw, 66px);
+  line-height: 1.02; letter-spacing: 2px; margin-bottom: 16px;
+}
+.section-title.centered { text-align: center; }
+.section-sub {
+  font-size: 17px; text-align: center; max-width: 600px;
+  margin: 0 auto 52px; font-weight: 300; line-height: 1.75; opacity: 0.7;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 15px;
+  font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase;
+  padding: 14px 32px; border: none; cursor: pointer; transition: all 0.25s ease;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.btn-primary.large { font-size: 17px; padding: 18px 40px; }
+.btn-primary.full { width: 100%; justify-content: center; margin-top: 8px; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 15px;
+  font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  padding: 13px 30px; border: 2px solid; transition: all 0.25s ease;
+}
+
+/* ── Scroll Animations ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── NAVBAR ── */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 24px; transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; height: 80px;
+}
+/* Logo block */
+.nav-brand { display: flex; align-items: center; gap: 0; }
+.logo-wrap { display: flex; align-items: center; gap: 12px; }
+.logo-img { height: 54px; width: auto; object-fit: contain; flex-shrink: 0; }
+.logo-text-block { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-main { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; }
+.logo-pvt { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.55; }
+
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-links li a {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+  font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+  padding: 8px 11px; transition: color 0.2s; position: relative; opacity: 0.65;
+}
+.nav-links li a::after {
+  content: ''; position: absolute; bottom: 0; left: 11px; right: 11px;
+  height: 2px; transform: scaleX(0); transition: transform 0.2s;
+}
+.nav-links li a:hover { opacity: 1; }
+.nav-links li a:hover::after { transform: scaleX(1); }
+.nav-links li:last-child a {
+  font-weight: 800; letter-spacing: 2px; padding: 8px 16px; opacity: 1;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+.nav-links li:last-child a::after { display: none; }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001;
+}
+.hamburger span { display: block; width: 26px; height: 2px; transition: all 0.3s; }
+
+/* ── HERO ── */
+.hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; }
+.hero-grid-overlay {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 70%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 130px 24px 80px; width: 100%; }
+
+/* Hero logo block */
+.hero-logo-block { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
+.hero-logo-img { height: 70px; width: auto; object-fit: contain; }
+.hero-brand-name { display: flex; flex-direction: column; }
+.hbn-carb { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4.5vw, 52px); letter-spacing: 4px; line-height: 0.95; }
+.hbn-india { font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4.5vw, 52px); letter-spacing: 4px; line-height: 0.95; }
+.hbn-pvt { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 4px; font-weight: 600; opacity: 0.5; margin-top: 4px; }
+
+.hero-badge {
+  display: inline-block; font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px; font-weight: 800; letter-spacing: 4px;
+  border: 1px solid; padding: 7px 18px; margin-bottom: 22px; text-transform: uppercase;
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif; font-size: clamp(52px, 9vw, 110px);
+  line-height: 0.93; letter-spacing: 3px; margin-bottom: 22px;
+}
+.hero-title .dot { font-size: 0.55em; vertical-align: middle; margin: 0 12px; }
+.hero-sub { font-size: 18px; max-width: 500px; margin-bottom: 38px; font-weight: 300; line-height: 1.8; opacity: 0.7; }
+.hero-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-bottom: 60px; }
+.hero-stats {
+  display: inline-flex; align-items: center; gap: 28px;
+  border: 1px solid; backdrop-filter: blur(10px); padding: 20px 32px;
+}
+.stat { display: flex; flex-direction: column; gap: 3px; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1; }
+.stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; }
+.stat-div { width: 1px; height: 40px; }
+
+/* ── ABOUT ── */
+.about { padding: 110px 0; position: relative; }
+.about::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; margin-top: 32px; }
+.about-text p { font-size: 16px; margin-bottom: 18px; font-weight: 300; line-height: 1.8; opacity: 0.75; }
+.about-highlight {
+  border-left: 4px solid; padding: 18px 22px; margin: 22px 0;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.ah-row { display: flex; align-items: center; gap: 14px; }
+.ah-icon { font-size: 20px; flex-shrink: 0; }
+.ah-row div { display: flex; flex-direction: column; gap: 2px; }
+.ah-lbl { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.55; }
+.ah-val { font-family: 'Barlow Condensed', sans-serif; font-size: 19px; font-weight: 700; letter-spacing: 1px; }
+.about-list { margin-top: 20px; display: flex; flex-direction: column; gap: 11px; }
+.about-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; }
+.about-list li::before { content: '◆'; font-size: 9px; margin-top: 5px; flex-shrink: 0; }
+.about-img-wrap { position: relative; height: 380px; overflow: hidden; }
+.about-badge { position: absolute; bottom: 20px; right: 20px; padding: 12px 18px; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.about-badge span { font-family: 'Bebas Neue', sans-serif; font-size: 22px; line-height: 1; }
+.about-badge small { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; letter-spacing: 1px; font-weight: 700; }
+
+/* ── INFRASTRUCTURE ── */
+.infrastructure { padding: 110px 0; }
+.infra-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.infra-card { overflow: hidden; transition: transform 0.3s, border-color 0.3s; border: 1px solid; }
+.infra-card:hover { transform: translateY(-6px); }
+.infra-img { height: 175px; overflow: hidden; }
+.infra-body { padding: 20px; }
+.i-icon { font-size: 24px; margin-bottom: 10px; }
+.infra-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
+.infra-body p { font-size: 13px; font-weight: 300; line-height: 1.6; opacity: 0.7; }
+
+/* ── PRODUCTS ── */
+.products { padding: 110px 0; }
+.products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.product-card {
+  overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; position: relative;
+  cursor: pointer; border: 1px solid;
+}
+.product-card:hover { transform: translateY(-8px); }
+.product-card.featured { }
+.featured-label {
+  position: absolute; top: 12px; right: 12px;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 10px;
+  font-weight: 800; letter-spacing: 2px; padding: 4px 10px; z-index: 2;
+}
+.product-img { height: 185px; overflow: hidden; position: relative; }
+.pdf-hover {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+}
+.pdf-hover span {
+  font-family: 'Barlow Condensed', sans-serif; font-size: 14px;
+  font-weight: 700; letter-spacing: 1px; padding: 10px 20px;
+  border: 2px solid white; color: white; background: rgba(0,0,0,0.6);
+}
+.product-card:hover .pdf-hover { opacity: 1; }
+.product-body { padding: 18px; }
+.ptag { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 7px; }
+.product-body h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 7px; }
+.product-body p { font-size: 13px; margin-bottom: 12px; font-weight: 300; line-height: 1.55; opacity: 0.7; }
+.product-body ul { display: flex; flex-direction: column; gap: 6px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; }
+.product-body ul li { font-size: 12px; display: flex; align-items: flex-start; gap: 8px; opacity: 0.65; }
+.product-body ul li::before { content: '—'; font-size: 10px; flex-shrink: 0; margin-top: 2px; }
+
+/* ── DIRECTOR ── */
+.director-section { padding: 110px 0; position: relative; }
+.director-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; }
+.dir-heading { margin-bottom: 36px; }
+.dir-company { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0; line-height: 1; margin-top: 4px; }
+.dco { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 5.5vw, 72px); letter-spacing: 4px; }
+.dci { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 5.5vw, 72px); letter-spacing: 4px; }
+.dcp { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(14px, 2vw, 22px); letter-spacing: 4px; font-weight: 600; margin-left: 12px; align-self: flex-end; padding-bottom: 6px; opacity: 0.45; }
+.director-card { display: grid; grid-template-columns: 400px 1fr; overflow: hidden; border: 1px solid; min-height: 520px; }
+
+/* Photo side */
+.dir-photo-side { position: relative; overflow: hidden; min-height: 520px; }
+.dir-photo {
+  display: block !important; width: 100% !important; height: 100% !important;
+  max-width: none !important; object-fit: cover !important; object-position: center top !important;
+  position: absolute !important; inset: 0 !important;
+}
+.dir-photo-bar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, transparent 100%);
+  padding: 32px 22px 18px; display: flex; flex-direction: column; gap: 4px;
+}
+.dpb-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: white; letter-spacing: 3px; line-height: 1; }
+.dpb-role { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; color: white; }
+.dir-photo-side::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+
+/* Info side */
+.dir-info { padding: 44px 46px; display: flex; flex-direction: column; gap: 24px; justify-content: center; }
+.dir-name-block { display: flex; flex-direction: column; gap: 5px; }
+.dir-name-block h3 { font-family: 'Bebas Neue', sans-serif; font-size: 46px; line-height: 1; letter-spacing: 2px; }
+.dir-title { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+.dir-quote { position: relative; padding: 18px 22px; border-left: 4px solid; }
+.qm { font-family: Georgia, serif; font-size: 48px; opacity: 0.4; line-height: 0.6; display: inline-block; margin-bottom: 6px; }
+.qm.end { display: block; text-align: right; margin-top: 4px; }
+.dir-quote p { font-size: 15px; line-height: 1.8; font-weight: 300; font-style: italic; opacity: 0.85; }
+.dir-highlights { display: flex; flex-direction: column; gap: 10px; }
+.dh { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; }
+.dh span:first-child { flex-shrink: 0; font-size: 17px; }
+.dir-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 2px solid #25d366; color: #25d366;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; padding: 12px 24px; transition: all 0.25s;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+.btn-wa:hover { background: rgba(37,211,102,0.12); transform: translateY(-2px); }
+
+/* ── CLIENTS ── */
+.clients { padding: 80px 0; overflow: hidden; }
+.clients-wrap { overflow: hidden; margin-top: 16px; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+.clients-track { display: flex; animation: scrollTrack 28s linear infinite; width: max-content; }
+.clients-track:hover { animation-play-state: paused; }
+.cl { flex-shrink: 0; padding: 20px 48px; border: 1px solid rgba(255,255,255,0.08); border-right: none; font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 800; letter-spacing: 2px; white-space: nowrap; opacity: 0.45; transition: opacity 0.3s; }
+.cl:hover { opacity: 1; }
+@keyframes scrollTrack { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── DOWNLOAD ── */
+.download { padding: 72px 0; }
+.dl-card { padding: 56px; display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; overflow: hidden; border: 1px solid; }
+.dl-text h2 { font-family: 'Bebas Neue', sans-serif; font-size: 38px; line-height: 1.1; margin-bottom: 10px; }
+.dl-text h2 em { font-style: normal; }
+.dl-text p { font-size: 15px; opacity: 0.55; max-width: 380px; font-weight: 300; }
+.dl-action { flex-shrink: 0; text-align: center; }
+.dl-btn { flex-direction: column; gap: 4px; align-items: center; }
+.dl-sz { font-size: 10px; opacity: 0.6; font-weight: 400; letter-spacing: 1px; }
+.dl-note { font-size: 12px; opacity: 0.35; margin-top: 10px; }
+
+/* ── CONTACT ── */
+.contact { padding: 110px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 56px; margin-top: 24px; }
+.contact-left { display: flex; flex-direction: column; gap: 18px; }
+.cp-card { padding: 18px; display: flex; gap: 14px; align-items: center; border: 1px solid; }
+.cp-photo { width: 62px; height: 62px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid; }
+.cp-info { display: flex; flex-direction: column; gap: 3px; }
+.cp-name { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; }
+.cp-role { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.55; }
+.cp-phone { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; margin-top: 3px; }
+.ci { display: flex; gap: 13px; align-items: flex-start; }
+.ci-ic { font-size: 19px; flex-shrink: 0; margin-top: 2px; }
+.ci div { font-size: 14px; font-weight: 300; line-height: 1.7; opacity: 0.7; }
+.ci strong { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 2px; opacity: 1; }
+.contact-social { display: flex; gap: 10px; flex-wrap: wrap; }
+.s-btn { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.15); padding: 9px 15px; transition: all 0.25s; opacity: 0.6; }
+.s-btn:hover { opacity: 1; }
+.s-btn.wa { border-color: #25d366; color: #25d366; opacity: 0.85; }
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.fg { display: flex; flex-direction: column; gap: 7px; }
+.fg label { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.55; }
+.fg input, .fg textarea, .fg select { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: inherit; padding: 13px 15px; font-family: 'Barlow', sans-serif; font-size: 15px; outline: none; transition: border-color 0.25s; appearance: none; }
+.fg input::placeholder, .fg textarea::placeholder { opacity: 0.25; }
+.form-ok { display: none; border: 1px solid; padding: 15px 20px; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 1px; text-align: center; margin-top: 8px; }
+.form-ok.show { display: block; }
+
+/* ── FOOTER ── */
+.footer { border-top: 1px solid rgba(255,255,255,0.07); padding: 68px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; padding-bottom: 52px; }
+.footer-logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer-logo-img { height: 46px; width: auto; object-fit: contain; }
+.footer-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.fbt-main { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; }
+.fbt-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.4; }
+.footer-brand p { font-size: 13px; opacity: 0.5; font-weight: 300; line-height: 1.7; max-width: 240px; }
+.footer-cta { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.f-phone, .f-wa { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; opacity: 0.5; transition: opacity 0.2s; display: block; }
+.f-phone:hover { opacity: 1; }
+.f-wa { color: #25d366; opacity: 0.8; }
+.f-wa:hover { opacity: 1; text-decoration: underline; }
+.fl h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+.fl ul { display: flex; flex-direction: column; gap: 9px; }
+.fl ul li a { font-size: 13px; opacity: 0.5; transition: opacity 0.2s; }
+.fl ul li a:hover { opacity: 1; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { font-size: 12px; opacity: 0.2; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 1px; }
+
+/* ── WhatsApp FAB ── */
+.wa-fab {
+  position: fixed; bottom: 28px; right: 28px; width: 54px; height: 54px;
+  background: #25d366; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-size: 24px; box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  z-index: 999; transition: transform 0.25s, box-shadow 0.25s;
+}
+.wa-fab:hover { transform: scale(1.12); box-shadow: 0 8px 30px rgba(37,211,102,0.7); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .infra-grid { grid-template-columns: repeat(2,1fr); }
+  .products-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .director-card { grid-template-columns: 300px 1fr; }
+  .dir-photo-side { min-height: 460px; }
+  .dir-info { padding: 32px 32px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    position: fixed; top: 80px; left: 0; right: 0;
+    flex-direction: column; padding: 20px 16px 28px; gap: 4px;
+    transform: translateY(-110%); transition: transform 0.4s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.07); box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    z-index: 999;
+  }
+  .nav-links.open { transform: translateY(0); }
+  .nav-links li a { width: 100%; display: block; padding: 13px 16px; font-size: 16px; }
+  .nav-links li:last-child a { clip-path: none; text-align: center; margin-top: 8px; }
+  .hero-logo-img { height: 48px; }
+  .hbn-carb, .hbn-india { font-size: 32px; }
+  .hero-title { font-size: 46px; }
+  .hero-stats { flex-direction: column; gap: 14px; padding: 18px 24px; max-width: 260px; }
+  .stat-div { width: 80px; height: 1px; }
+  .hero-content { padding: 100px 20px 60px; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .infra-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .products-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .director-card { grid-template-columns: 1fr; }
+  .dir-photo-side { min-height: 340px; }
+  .dir-info { padding: 28px 22px; }
+  .dir-name-block h3 { font-size: 36px; }
+  .dco, .dci { font-size: 38px; }
+  .dl-card { flex-direction: column; text-align: center; padding: 32px 20px; }
+  .dl-text p { max-width: 100%; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  section { padding: 72px 0; }
+}
+@media (max-width: 480px) {
+  .products-grid { grid-template-columns: 1fr; }
+  .infra-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 38px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; width: 100%; }
+  .btn-ghost { width: 100%; justify-content: center; }
+  .hbn-carb, .hbn-india { font-size: 26px; }
+}
